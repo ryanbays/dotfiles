@@ -1,0 +1,98 @@
+* {
+    background-image: none;
+    font-size: 25px;
+}
+
+@import url('../../.cache/wal/colors-waybar.css');
+
+window {
+    background-color: transparent;
+}
+
+button {
+    font-family: "CaskaydiaMono NFM";
+    outline-style: none;
+    border: none;
+    border-width: 0px;
+    background: @background;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 10%;
+    border-radius: 0px;
+    box-shadow: none;
+    text-shadow: none;
+    animation: gradient_f 20s ease-in infinite;
+}
+
+button:hover {
+    background-size: 15%;
+    border-radius: 16px;
+    animation: gradient_f 20s ease-in infinite;
+    transition: all 0.3s cubic-bezier(.55,0.0,.28,1.682);
+}
+
+button:hover#lock {
+    border-radius: 16px;
+    margin : 20px 0px 20px 0px;
+}
+
+button:hover#logout {
+    border-radius: 16px;
+    margin : 20px 0px 20px 0px;
+}
+
+button:hover#suspend {
+    border-radius: 16px;
+    margin : 20px 0px 20px 0px;
+}
+
+button:hover#shutdown {
+    border-radius: 16px;
+    margin : 20px 0px 20px 0px;
+}
+
+button:hover#hibernate {
+    border-radius: 16px;
+    margin : 20px 0px 20px 0px;
+}
+
+button:hover#reboot {
+    border-radius: 16px;
+    margin : 20px 0px 20px 0px;
+}
+
+#lock {
+    background-image: image(url("lock.png")); 
+    border-radius: 16px;
+    margin : 25px 0px 25px 0px;
+}
+
+#logout {
+    background-image: url("logout.png"); 
+    border-radius: 16px;
+    margin : 25px 0px 25px 0px;
+}
+
+#suspend {
+    background-image: url("pause.png"); 
+    border-radius: 16px;
+    margin : 25px 0px 25px 0px;
+}
+
+#shutdown {
+    background-image: url("power.png"); 
+    border-radius: 16px;
+    margin : 25px 0px 25px 0px;
+}
+
+#hibernate {
+    background-image: url("sleep.png"); 
+    border-radius: 16px;
+    margin : 25px 0px 25px 0px;
+}
+
+#reboot {
+    background-image: url("restart.png"); 
+    border-radius: 16px;
+    margin : 25px 0px 25px 0px;
+}
