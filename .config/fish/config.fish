@@ -2,6 +2,8 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
+cat ~/.cache/wal/sequences
+
 # List Directory
 alias l='eza -lh  --icons=auto' # long list
 alias ls='eza  --icons=auto' # short list

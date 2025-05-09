@@ -1,6 +1,11 @@
 #!/bin/bash
 
 cp -r .config/* $HOME/.config/
+read -p "Install neovim config? [y/n]" neovim
+if [ "${neovim,,}" == "y" ]
+then
+    git clone https://github.com/rain-1107/nvim $HOME/.config/nvim 
+fi
 
 # Installs dependencies
 yay || (sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si)
@@ -19,3 +24,5 @@ fi
 
 # Install script for sddm theme from https://github.com/Keyitdev/sddm-astronaut-theme/tree/master
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/keyitdev/sddm-astronaut-theme/master/setup.sh)"
+
+

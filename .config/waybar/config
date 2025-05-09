@@ -10,7 +10,7 @@
 		"tooltip": false,
 		"scroll-step": 5,
 		"format": "{icon}  {volume}%",
-		"format-muted": "muted",
+		"format-muted": " ",
 		"on-click":"pactl set-sink-mute @DEFAULT_SINK@ toggle",
 		"format-icons": {
 			"default": ["", "", ""]
