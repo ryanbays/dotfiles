@@ -1,0 +1,6 @@
+require("rain.remap")
+require("rain.plugins")
+require("rain.themes")
+vim.notify("Hello, rain", "info", { title = "Start up" })
+vim.notify(vim.fn.stdpath("config"), "info", { title = "Start up" })
+require("rain.set")
