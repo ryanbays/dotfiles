@@ -34,15 +34,18 @@ local plugins = {
                     width = 0.8,
                     height = 0.8,
                 },
-                question_header = " Copilot Chat",
-                answer_header = " Copilot Answer",
-                error_header = " Copilot Error",
-                seperator = "───────────────────────────────────────────────",
+                question_header = " Query ",
+                answer_header = " Answer ",
+                error_header = " Error ",
+                seperator = " ───────────────────────────────────────────────",
 
             },
         },
     },
-    { "AlphaTechnolog/pywal.nvim",       as = 'pywal' },
+    {
+        "AlphaTechnolog/pywal.nvim",
+        as = 'pywal'
+    },
     "folke/tokyonight.nvim",
     "rebelot/kanagawa.nvim",
     "rose-pine/neovim",

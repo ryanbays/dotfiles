@@ -4,6 +4,11 @@ end
 
 cat ~/.cache/wal/sequences
 
+alias ...='cd ../..' # Go up two directories
+alias vim='nvim' # Use nvim as vim
+alias vi='nvim' # Use nvim as vi
+alias v='nvim' # Use nvim as v
+
 # List Directory
 alias l='eza -lh  --icons=auto' # long list
 alias ls='eza  --icons=auto' # short list
