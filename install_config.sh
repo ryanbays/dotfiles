@@ -1,11 +1,7 @@
 #!/usr/bin/bash
 
-# Create backup of existing config if it exists
-if [ -d "$HOME/.config" ]; then
-    echo "Backing up existing config to ~/.config.backup"
-    cp "$HOME/.config" "$HOME/.config.backup"
-fi
-
+mkdir -p "$HOME/.config.backup"
 for d in */ ; do
+    mv "$HOME/.config/$d" "$HOME/.config.backup/$d" 2>/dev/null
     stow $d
 done
