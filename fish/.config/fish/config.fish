@@ -4,6 +4,7 @@ end
 
 cat ~/.cache/wal/sequences
 
+set -x EDITOR nvim
 alias ...='cd ../..' # Go up two directories
 alias vim='nvim' # Use nvim as vim
 alias vi='nvim' # Use nvim as vi

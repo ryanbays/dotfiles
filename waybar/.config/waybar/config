@@ -2,8 +2,8 @@
 	"layer": "top",
     "position": "top",
     "reload_style_on_change": true,
-	"modules-left": ["custom/launcher","cpu","memory","disk","hyprland/workspaces"],
-	"modules-center": ["clock"],
+	"modules-left": ["custom/launcher","cpu","memory","disk", "custom/website-status"],
+	"modules-center": ["clock","hyprland/workspaces"],
 	"modules-right": ["tray", "cava", "bluetooth", "hyprland/language","backlight","pulseaudio","battery","custom/power"],
 	
 	"pulseaudio": {
@@ -119,8 +119,10 @@
         "on-click": "wlogout --column-spacing 50px",
     },
     "clock": {
-        "format": "  {:%A - %B %d, %Y - %R}",
-        "tooltip": false,
+        "interval": 60,
+        "tooltip": true,
+        "format": "{:%H:%M}",
+        "tooltip-format": "{:%a %d %b %Y}",
     },
     "hyprland/workspaces": {
         "format": "{icon}",
@@ -147,5 +149,12 @@
         "format-disconnected": "disconnected",
         "tooltip": false,
         "max-length": 50,
+    },
+    "custom/website-status": {
+        "format": "rainserver.uk {} ",
+        "interval": 60,
+        "exec": "curl -s -o /dev/null -w '%{http_code}' https://rainserver.uk | awk '{if ($1 == 200) print \"󰖟 \"; else print \"󰖟 \"}'",
+        "on-click": "xdg-open https://rainserver.uk",
+        "tooltip": false
     }
 }
