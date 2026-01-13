@@ -74,6 +74,8 @@ vim.lsp.config["rust_analyzer"] = {
     capabilities = capabilities,
 }
 
+
+
 vim.lsp.config["pyright"] = {
     capabilities = capabilities,
 }
@@ -84,15 +86,22 @@ vim.lsp.config["gopls"] = {
 
 -- for cmp-style UI
 vim.o.completeopt = "menu,menuone,noselect"
-
 local cmp = require("cmp")
-
 cmp.setup({
     snippet = {
-        expand = function(args) end, -- or your snippet engine
+        expand = function(_) end, -- or your snippet engine
     },
     mapping = cmp.mapping.preset.insert({
-        ["<CR>"] = cmp.mapping.confirm({ select = true }),
+        ["<CR>"] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+                cmp.confirm({
+                    behavior = cmp.ConfirmBehavior.Replace,
+                    select = false,
+                })
+            else
+                fallback()
+            end
+        end, { "i", "s" }),
         ["<Tab>"] = cmp.mapping.select_next_item(),
         ["<S-Tab>"] = cmp.mapping.select_prev_item(),
     }),
