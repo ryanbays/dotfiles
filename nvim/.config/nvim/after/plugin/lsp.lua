@@ -54,7 +54,6 @@ vim.diagnostic.config({
     update_in_insert = false,
 })
 
--- 0.11-style server configs
 vim.lsp.config["lua_ls"] = {
     capabilities = capabilities,
     settings = {
@@ -74,8 +73,6 @@ vim.lsp.config["rust_analyzer"] = {
     capabilities = capabilities,
 }
 
-
-
 vim.lsp.config["pyright"] = {
     capabilities = capabilities,
 }
@@ -86,28 +83,37 @@ vim.lsp.config["gopls"] = {
 
 -- for cmp-style UI
 vim.o.completeopt = "menu,menuone,noselect"
+
+local luasnip = require("luasnip")
 local cmp = require("cmp")
 cmp.setup({
     snippet = {
-        expand = function(_) end, -- or your snippet engine
+        expand = function(args)
+            luasnip.lsp_expand(args.body)
+        end, -- or your snippet engine
     },
     mapping = cmp.mapping.preset.insert({
         ["<CR>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.confirm({
-                    behavior = cmp.ConfirmBehavior.Replace,
-                    select = false,
+                    behavior = cmp.ConfirmBehavior.Insert,
+                    select = true,
                 })
             else
                 fallback()
             end
         end, { "i", "s" }),
-        ["<Tab>"] = cmp.mapping.select_next_item(),
+        ["<Tab>"] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+                cmp.select_next_item()
+            else
+                fallback()
+            end
+        end, { "i", "s" }),
         ["<S-Tab>"] = cmp.mapping.select_prev_item(),
     }),
     sources = {
         { name = "nvim_lsp" },
-        -- { name = "buffer" },
-        -- { name = "path" },
+        { name = "luasnip" },
     },
 })
