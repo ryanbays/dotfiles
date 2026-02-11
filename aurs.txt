@@ -1,2 +1,3 @@
 wlogout
 catppuccin-gtk-theme-mocha
+catppuccin-gtk-theme-git
