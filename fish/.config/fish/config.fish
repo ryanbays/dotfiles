@@ -17,5 +17,3 @@ alias ll='eza -lha --icons=auto --sort=name --group-directories-first' # long li
 alias ld='eza -lhD --icons=auto' # long list dirs
 alias lt='eza --icons=auto --tree' # list folder as tree
 alias cat='bat'
-
-fish_add_path /home/rb/.spicetify
