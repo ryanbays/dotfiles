@@ -8,6 +8,8 @@ done
 
 hypr_script=$(realpath ./hyprland_start.sh)
 
+touch ~/monitors.conf
+
 sudo tee /etc/greetd/config.toml > /dev/null << EOF
 [terminal]
 vt = 1
