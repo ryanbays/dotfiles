@@ -3,3 +3,9 @@ gradient = 1
 gradient_count = 2
 gradient_color_1 = '#565D81'
 gradient_color_2 = '#665B82'
+
+[output]
+method = raw
+raw_target = /tmp/cava.fifo
+data_format = ascii
+ascii_max_range = 7

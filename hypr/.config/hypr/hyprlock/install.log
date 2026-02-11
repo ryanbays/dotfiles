@@ -1,0 +1,9 @@
+[15:55:02 2026-02-11] FETCHING Version 2.42.8
+[15:55:02 2026-02-11] CREATING /home/rb/.spicetify
+[15:55:02 2026-02-11] DOWNLOADING https://github.com/spicetify/cli/releases/download/v2.42.8/spicetify-2.42.8-linux-amd64.tar.gz
+[15:55:03 2026-02-11] EXTRACTING /home/rb/.spicetify/spicetify.tar.gz
+[15:55:03 2026-02-11] SETTING EXECUTABLE PERMISSIONS TO /home/rb/.spicetify/spicetify
+[15:55:03 2026-02-11] REMOVING /home/rb/.spicetify/spicetify.tar.gz
+[15:55:03 2026-02-11] APPENDING /home/rb/.spicetify to PATH in /home/rb/.config/fish/config.fish
+[15:55:03 2026-02-11] spicetify v2.42.8 was installed successfully to /home/rb/.spicetify
+[15:55:03 2026-02-11] Run 'spicetify --help' to get started

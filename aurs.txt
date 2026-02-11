@@ -1,0 +1,2 @@
+wlogout
+catppuccin-gtk-theme-mocha
