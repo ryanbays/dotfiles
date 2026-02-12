@@ -14,8 +14,8 @@ fi
 
 # Install yay
 echo "Installing yay..."
-rm -rf yay
-git clone https://aur.archlinux.org/yay.git
-cd yay
+rm -rf ../yay
+git clone https://aur.archlinux.org/yay.git ../yay
+cd ../yay
 makepkg -si
 

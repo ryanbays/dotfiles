@@ -1,7 +1,7 @@
 #!/bin/bash
 
 PS3="Choose an option: "
-options=("Full install" "Install config files" "Install Vencord" "Exit")
+options=("Full install" "Install config files" "Install Vencord" "Install Yay" "Exit")
 
 cd scripts
 
@@ -16,6 +16,9 @@ do
             ;;
         "Install Vencord")
             bash install_vencord.sh 
+            ;;
+        "Install Yay") 
+            bash install_yay.sh
             ;;
         "Exit") 
             break 
