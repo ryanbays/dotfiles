@@ -26,7 +26,7 @@ local plugins = {
             opts = {
                 system_prompt = 'COPILOT_INSTRUCTIONS',
 
-                model = "gpt-5.1",
+                model = "gpt-5.2",
                 agent = "copilot",
                 sticky = { "#buffer", "#files" },
                 window = {
@@ -147,7 +147,11 @@ local plugins = {
         tag = '0.1.6',
         dependencies = { 'nvim-lua/plenary.nvim' },
     },
-    { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
+    {
+        'nvim-treesitter/nvim-treesitter',
+        lazy = false,
+        build = ':TSUpdate'
+    },
     'theprimeagen/harpoon',
     'mbbill/undotree',
     'tpope/vim-fugitive',
@@ -164,7 +168,10 @@ local plugins = {
             'hrsh7th/cmp-buffer',
             'hrsh7th/cmp-path',
             'hrsh7th/cmp-cmdline',
-            'L3MON4D3/LuaSnip',
+            {
+                'L3MON4D3/LuaSnip',
+                build = "make install_jsregexp",
+            },
             'saadparwaiz1/cmp_luasnip',
         },
     },
